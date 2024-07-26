@@ -1,0 +1,25 @@
+.scroll-container{
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+.content{
+  scroll-snap-align: start;
+}
+.right-button, .left-button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+.right-button{
+  right: 0;
+  background-color: darkred;
+}
+.left-button{
+  left: 0;
+  background-color: orange;
+}

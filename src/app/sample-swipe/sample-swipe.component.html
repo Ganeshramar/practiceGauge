@@ -1,0 +1,11 @@
+<div class="scroll-container" (swipeleft)="showButton('left')" (swiperight)="showButton('right')">
+  <div class="content">
+    <p>Hii</p>
+  </div>
+  <div class="right-button" [@fadeInOut]="rightButtonVisible ? 'visible' : 'hidden'">
+    <p>right</p>
+  </div>
+  <div class="left-button" [@fadeInOut]="leftButtonVisible ? 'visible' : 'hidden'">
+    <p>Left</p>
+  </div>
+</div>

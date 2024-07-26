@@ -1,0 +1,18 @@
+
+<div class="canvas-wrap">
+  <canvas id="canva" width="234" height="234" #canvasElement (mousedown)="startDrag($event)" (mousemove)="drag($event,'mouse')" (mouseup)="stopDrag($event)" (touchstart)="startDrag($event)" (touchmove)="drag($event,'touch')" (touchend)="stopDrag($event)" (click)="drag($event,'click')"></canvas>
+  <div class="dial" #dail tabindex="0"></div>
+  <div class="circle" tabindex="0"></div>
+  <div class="minLine" #minLine tabindex="0"></div>
+  <div class="maxLine" #maxLine tabindex="0"></div>
+  <span id="procent"></span>
+
+<div style="position:relative;" >
+  <input type="text" [(ngModel)]="pointerValue" placeholder="Enter Pointer value">
+  <button (click)="setValue()">Set Point</button>
+  <!-- <input type="text" [(ngModel)]="minPointerValue" placeholder="Enter Pointer value">
+  <button (click)="setMinValue()">Min Point</button>
+  <input type="text" [(ngModel)]="maxPointerValue" placeholder="Enter Pointer value">
+  <button (click)="setMaxValue()">Max Point</button> -->
+</div>
+</div>

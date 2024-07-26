@@ -1,0 +1,22 @@
+*,body{
+  margin: 0;
+  padding: 0;
+}
+.parent{
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  .sub-parent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background-color: #ccc;
+    .main-data{
+      display: flex;
+      // flex-shrink: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="parent" id="mainDiv">
+  <div class="sub-parent" *ngFor="let item of deviceList;let i=index">
+    <!-- <div class="left-button"> -->
+      <button class="first" [ngClass]="{'hide': !showLeftButton}" *ngIf="this.showID === item.id">Archive</button>
+      <button class="second" [ngClass]="{'hide': !showLeftButton}" *ngIf="this.showID === item.id">Delete</button>
+      <button class="white" [ngClass]="{'hide': showDataLeft}" *ngIf="this.showID === item.id">Delete</button>
+    <!-- </div> -->
+    <div class="main-data" (click)="checkClick(item.id)" (touchstart)="touchInit($event,item.id)" (touchmove)="checkValue($event,'move',item.id)" (touchend)="touchStop($event,item.id)">
+      <p>{{item.data}}</p>
+    </div>
+    <!-- <div class="right-button"> -->
+      <button class="white" [ngClass]="{'hide': showDataRight}" *ngIf="this.showID === item.id">Archive</button>
+      <button class="third" [ngClass]="{'hide': !showRightButton}" *ngIf="this.showID === item.id">Archive</button>
+      <button class="last" [ngClass]="{'hide': !showRightButton}" *ngIf="this.showID === item.id">Delete</button>
+    <!-- </div> -->
+  </div>
+</div>

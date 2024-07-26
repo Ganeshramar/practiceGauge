@@ -1,0 +1,79 @@
+<div id="mainDiv" #mainDiv>
+  <div class="max"><span>Min</span></div>
+  <div style="position:relative;">
+    <svg #svgEle xmlns="http://www.w3.org/2000/svg" width="234" height="220" viewBox="0 0 234 220" fill="none"
+      (mousedown)="rangeSliderInit()" (touchstart)="rangeSliderInit()" (mousemove)="rangeSliderUpdate($event)"
+      (touchmove)="rangeSliderUpdate($event)" (mouseup)="rangeSliderStop()" (touchend)="rangeSliderStop()"
+      (touchcancel)="callEvent($event)" (click)="rangeSliderUpdate($event)">
+      <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="150%">
+        <stop offset="0%" stop-color="#56c4fb" />
+        <stop offset="100%" stop-color="#0baeff" />
+      </linearGradient>
+      <path class="grey"
+        d="M35.2366 199.682C21.5387 183.997 12.6548 164.726 9.64128 144.16C6.62779 123.594 9.6116 102.6 18.2378 83.673C26.8641 64.7464 40.7698 48.6842 58.3012 37.3966C75.8326 26.109 96.252 20.071 117.131 20.0006C138.01 19.9303 158.47 25.8305 176.078 36.9997C193.685 48.1688 207.7 64.1369 216.455 83.0049C225.21 101.873 228.336 122.847 225.463 143.432C222.589 164.018 213.837 183.349 200.246 199.126"
+        stroke="#E8EBED" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+      <path class="blackFw" #blackForwardElement d="M120.2366 20.9
+      C137.01 20.9303 158.47 25.8305 176.078 36.9997
+      C193.685 48.1688 207.7 64.1369 216.455 83.0049
+      C225.21 101.873 228.336 122.847 225.463 143.432
+      C222.589 164.018 213.837 183.349 200.246 199.126" stroke="#B8BCBF" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round" />
+
+      <path class="blackRv" #blackReverseElement d="M118.246 20.9
+    C96.01 21 75.47 26.8305 58.078 37.9997
+    C40.685 48.1688 26.7 64.1369 18.455 83.0049
+    C9.21 102.873 6.336 123.847 9.463 144.432
+    C12.589 164.018 21.837 183.349 35.246 199.126" stroke="#B8BCBF" stroke-width="3" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <!-- <path class="additonal" d="M105.2 21.682 C138.01 18 141.47 25.8305 176.078 36.9997" stroke="#1D9E5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/> -->
+
+      <rect width="1" height="9" rx="0.5" fill="#B8BCBF" class="leftMinTag" transform="rotate(-8 98, 12)"
+        style="x: 101;y: 13;" #leftMinTag></rect>
+      <rect width="1" height="9" rx="0.5" fill="#B8BCBF" class="rightMaxTag" transform="rotate(90 231, 127)"
+        style="x: 225; y: 124;" #rightMaxTag />
+      <rect width="1" height="9" rx="0.5" fill="#B8BCBF" class="leftMaxTag" transform="rotate(-89 -2, 125)"
+        style="x: 4; y: 127;" #leftMaxTag />
+      <rect width="1" height="9" rx="0.5" fill="#B8BCBF" class="rightMinTag" transform="rotate(9 133, 12)"
+        style="x: 135; y: 12;" #rightMinTag></rect>
+      <rect width="1" height="9" rx="0.5" fill="#B8BCBF" class="right" transform="rotate(1 117, 11)"
+        style="x: 119;y: 11;"></rect>
+      <path #greenForwardElement class="greenFw" d="M120.2366 20.9
+      C137.01 20.9303 158.47 25.8305 176.078 36.9997
+      C193.685 48.1688 207.7 64.1369 216.455 83.0049
+      C225.21 101.873 228.336 122.847 225.463 143.432
+      C222.589 164.018 213.837 183.349 200.246 199.126" stroke="#1D9E5E" stroke-width="4" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <path #greenReverseElement class="greenRv" d="M118.246 20.9
+      C96.01 21 75.47 26.8305 58.078 37.9997
+      C40.685 48.1688 26.7 64.1369 18.455 83.0049
+      C9.21 102.873 6.336 123.847 9.463 144.432
+      C12.589 164.018 21.837 183.349 35.246 199.126" stroke="#1D9E5E" stroke-width="4" stroke-linecap="round"
+        stroke-linejoin="round" />
+      <g filter="url(#filter0_dd_22254_86016)" class="track">
+        <g filter="url(#filter1_d_22254_86016)">
+          <circle cx="14.679" cy="12.679" r="10.679" fill="white" #outerTrack />
+          <circle cx="14.679" cy="12.679" r="10.429" stroke="#DBDFE2" stroke-width="0.5" #innerTrack />
+        </g>
+        <circle class="circleTrack" cx="14.6766" cy="12.6824" r="6.79571" fill="#1D9E5E" #track />
+      </g>
+    </svg>
+    <!-- <div class="track" #track tabindex="0"></div> -->
+    <!-- <div class="dot"></div> -->
+    <!-- <div class="vertic"></div>
+  <div class="horiz"></div> -->
+    <!-- <div class="check"></div> -->
+  </div>
+  <div class="min" [style.x.px]="135" [style.y.py]="35"><span>Min</span></div>
+  <div style="position:relative;" *ngIf="isReverse">
+    <input type="text" [(ngModel)]="maxRvValue" placeholder="Enter Reverse Max value">
+    <button (click)="changeRvMaxValue()">Rv Change</button>
+    <input type="text" [(ngModel)]="minRvValue" placeholder="Enter Reverse Min value">
+    <button (click)="changeRvMinValue()"> Rv Change</button>
+  </div>
+  <div style="position:relative; top:10px" *ngIf="isForward">
+    <input type="text" [(ngModel)]="maxFwValue" placeholder="Enter Forward Max value">
+    <button (click)="changeFwMaxValue()">Change</button>
+    <input type="text" [(ngModel)]="minFwValue" placeholder="Enter Forward Min value">
+    <button (click)="changeFwMinValue()">Change</button>
+  </div>
+</div>

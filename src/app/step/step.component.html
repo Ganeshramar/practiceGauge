@@ -1,0 +1,37 @@
+
+<div class="max"><span>Min</span></div>
+<div style="position:relative;">
+  <svg #svgEle xmlns="http://www.w3.org/2000/svg" width="234" height="220" viewBox="0 0 234 220" fill="none"
+    (mousedown)="rangeSliderInit()" (touchstart)="rangeSliderInit()" (mousemove)="rangeSliderUpdate($event)"
+    (touchmove)="rangeSliderUpdate($event)" (mouseup)="rangeSliderStop()" (touchend)="rangeSliderStop()"
+    (touchcancel)="callEvent($event)">
+    <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="150%">
+      <stop offset="0%" stop-color="#56c4fb" />
+      <stop offset="100%" stop-color="#0baeff" />
+    </linearGradient>
+    <path class="grey"
+      d="M35.2366 199.682C21.5387 183.997 12.6548 164.726 9.64128 144.16C6.62779 123.594 9.6116 102.6 18.2378 83.673C26.8641 64.7464 40.7698 48.6842 58.3012 37.3966C75.8326 26.109 96.252 20.071 117.131 20.0006C138.01 19.9303 158.47 25.8305 176.078 36.9997C193.685 48.1688 207.7 64.1369 216.455 83.0049C225.21 101.873 228.336 122.847 225.463 143.432C222.589 164.018 213.837 183.349 200.246 199.126"
+      stroke="#E8EBED" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    <path class="black" #blackElement
+      d="M35.2366 199.682C21.5387 183.997 12.6548 164.726 9.64128 144.16C6.62779 123.594 9.6116 102.6 18.2378 83.673C26.8641 64.7464 40.7698 48.6842 58.3012 37.3966C75.8326 26.109 96.252 20.071 117.131 20.0006C138.01 19.9303 158.47 25.8305 176.078 36.9997C193.685 48.1688 207.7 64.1369 216.455 83.0049C225.21 101.873 228.336 122.847 225.463 143.432C222.589 164.018 213.837 183.349 200.246 199.126"
+      stroke="#B8BCBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <rect width="1" height="9" rx="0.5" fill="#B8BCBF"
+      #rightTag class="right"/>
+    <rect width="1" height="9" rx="0.5"
+      fill="#B8BCBF" #leftTag />
+    <path #greenElement class="green"
+      d="M35.2366 199.682C21.5387 183.997 12.6548 164.726 9.64128 144.16C6.62779 123.594 9.6116 102.6 18.2378 83.673C26.8641 64.7464 40.7698 48.6842 58.3012 37.3966C75.8326 26.109 96.252 20.071 117.131 20.0006C138.01 19.9303 158.47 25.8305 176.078 36.9997C193.685 48.1688 207.7 64.1369 216.455 83.0049C225.21 101.873 228.336 122.847 225.463 143.432C222.589 164.018 213.837 183.349 200.246 199.126"
+      stroke="#1D9E5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+  <div class="track" #track tabindex="0"></div>
+  <div class="dot"></div>
+  <div class="vertic"></div>
+  <div class="horiz"></div>
+  <!-- <div class="check"></div> -->
+</div>
+<div style="position:relative;">
+  <input type="text" [(ngModel)]="maxValue" placeholder="Enter the Max value">
+  <button (click)="changeMaxValue()">Change</button>
+  <input type="text" [(ngModel)]="minValue" placeholder="Enter the Min value">
+  <button (click)="changeMinValue()">Change</button>
+</div>

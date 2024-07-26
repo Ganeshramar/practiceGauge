@@ -1,0 +1,15 @@
+<div class="clock">
+  <div class="clock-face">
+    <div class="hand hour-hand" #hour></div>
+    <div class="hand minute-hand" #minute> </div>
+    <div class="hand second-hand" #second></div>
+  </div>
+</div>
+<div class="control-bar-start-stop">
+  <div class="control-bar-top-icon">
+    <img src="../images/control_bar_jog.svg" alt="">
+  </div>
+</div>
+
+<img src="../../assets/images/download.png" appLongPress (longPress)="handleLongPress()">
+<img src="../../assets/images/Angular.png" (touchstart)="onTouchStart()" (touchend)="onTouchEnd()" (mousedown)="onMouseDown()" (mouseup)="onMouseUp()">

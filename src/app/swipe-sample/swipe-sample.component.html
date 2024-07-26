@@ -1,0 +1,11 @@
+<div class="parent" id="mainDiv">
+  <div class="sub-parent" *ngFor="let item of deviceList;let i=index">
+    <!-- <div class="child"> -->
+      <button class="first">Archive</button>
+      <div class="main-data" (touchstart)="touchInit($event,item.id)" (touchmove)="checkValue($event,item.id)" (touchend)="touchStop($event,item.id)">
+        <p>{{item.data}}</p>
+      </div>
+      <button class="second">Delete</button>
+    <!-- </div> -->
+  </div>
+</div>

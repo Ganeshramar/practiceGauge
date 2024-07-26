@@ -1,0 +1,128 @@
+svg {
+  // height: 90vh;
+  // margin: auto;
+  // display: block;
+}
+
+path {
+  stroke-linecap: round;
+  stroke-width: 10px;
+}
+
+path.grey {
+  stroke: #e7e7e8;
+}
+path.blackRv {
+  stroke: #979da1;
+  stroke-width: 3px;
+  stroke-dasharray: 249;
+  stroke-dashoffset: 249;
+  animation: dash 3s ease-out forwards;
+}
+path.blackFw {
+  stroke: #979da1;
+  stroke-width: 3px;
+  stroke-dasharray: 245;
+  stroke-dashoffset: 245;
+  animation: dash 3s ease-out forwards;
+}
+
+path.outer{
+  stroke-width: 5px;
+  animation: dash 3s ease-out forwards;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 200;
+}
+
+path.greenFw {
+  stroke-width: 3px;
+  stroke-dasharray: 245;
+  stroke-dashoffset: 245;
+  animation: dash 3s ease-out forwards;
+}
+path.greenRv {
+  stroke-width: 3px;
+  stroke-dasharray: 249;
+  stroke-dashoffset: 249;
+  animation: dash 3s ease-out forwards;
+}
+
+rect.right{
+
+}
+
+// .track {
+//   border: 3px solid rgb(255, 255, 255);
+//   background-color: green;
+//   border-radius: 50%;
+//   box-shadow: 0 0 5px 5px rgba(0, 0, 0, .1);
+//   cursor: pointer;
+//   height: 9.5px;
+//   // margin-left: -$dial__size/2;
+//   position: absolute;
+//   // transform: translate(183%,-200%);
+//   // transform: translateX(32px) translateY(-28px);
+//   width: 9.5px;
+//   z-index: 40;
+//   &:focus {
+//     outline: 0
+//   }
+// }
+.dot {
+  height: 206px;
+  width: 207px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 25px;
+  left: 14px;
+}
+.vertic{
+  height: 1px;
+  width: 207px;
+  background-color: black;
+  position: absolute;
+  top:128px;
+  left:14px;
+}
+.horiz{
+  height: 206px;
+  width: 1px;
+  background-color: black;
+  position: absolute;
+  left: 117px;
+  top:25px;
+}
+.check{
+  position: absolute;
+  top:128px;
+  left: 117px;
+  height: 10px;
+  width: 10px;
+}
+
+.small {
+  font: sans-serif;
+  fill: #5D6063;
+}
+
+  .min, .max {
+    display: inline-flex;
+    padding: 0 6px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    border: 1px solid var(--background-background-interactive-component-06, #B8BCBF);
+    background: #FFF;
+
+    span {
+      color: #5d6063;
+      font-family: 'Roboto-Regular';
+      font-size: 10;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.357px;
+    }
+  }
